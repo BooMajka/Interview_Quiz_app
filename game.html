@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game Page</title>
+	<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+	<main id="game">
+		<nav class="icons">
+			<div class="icon-item">
+				<div class="scores">
+					<a href="./highscores.html" id="highscore-btn">
+						<p>View high scores</p>
+					</a>
+				</div>
+			</div>
+			<div class="icon-item">
+				<p class="your-score">Your Score:</p>
+				<h1 class="your-score-text" id="score">0</h1>
+			</div>
+			<div class="icon-item">
+				<p id="progressText">Question </p>
+				<div id="progressBar">
+					<div id="progressBarFull"></div>
+				</div>
+			</div>
+			<div class="icon-item">
+				<div class="timer">
+					<p>Time:</p>
+				</div>
+		</nav>
+		<section>
+			<div id="question">
+				What is the answer to this question?
+			</div>
+			<div class="choice-container btn">
+				<p class="choice-prefix">A.</p>
+				<p class="choice-text" data-number="1">Choice</p>
+			</div>
+			<div class="choice-container btn">
+				<p class="choice-prefix">B.</p>
+				<p class="choice-text" data-number="2">Choice</p>
+			</div>
+			<div class="choice-container btn">
+				<p class="choice-prefix">C.</p>
+				<p class="choice-text" data-number="3">Choice</p>
+			</div>
+		</section>
+		</div>
+	</main>
+	<script src="./assets/js/script.js"></script>
+</body>
+
+</html>

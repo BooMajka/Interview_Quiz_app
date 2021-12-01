@@ -10,7 +10,7 @@ let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
-let timeLeft = 30;
+let timeLeft = 50;
 
 const max_questions= 5;
 const score_points = 100;

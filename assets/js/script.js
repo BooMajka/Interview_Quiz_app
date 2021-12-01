@@ -3,12 +3,14 @@ const choices = Array.from(document.querySelectorAll(".choice-text"));
 const progressText = document.querySelector("#progressText");
 const scoreText = document.querySelector("#score");
 const progressBarFull = document.querySelector("#progressBarFull");
+const timer = document.querySelector('#timer');
 
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let timeLeft = 30;
 
 const max_questions= 5;
 const score_points = 100;
@@ -63,7 +65,7 @@ function getNewQuestion() {
 	if(availableQuestions.length === 0 || questionCounter > max_questions) {
 		localStorage.setItem("mostRecentScore", score);
 
-		return window.location.assign('./end.html')
+		return window.location.assign('/end.html')
 	}
 	questionCounter++
 	progressText.innerText =`Question ${questionCounter} of ${max_questions}`;
@@ -74,8 +76,19 @@ function getNewQuestion() {
 	question.innerText = currentQuestion.question;
 	console.log(questionsIndex);
 
+	var timeInterval = setInterval(function(){
+		if (timeLeft > 1) {
+			timer.textContent = "Time: "+ timeLeft;
+			timeLeft--;
+		} else {
+			timer.textContent = "";
+			clearInterval(timeInterval);
+			return window.location.assign('/end.html');
+		}
+	}, 1000);
+
 	choices.forEach(choice => {
-		const number = choice.dataset('number');
+		const number = choice.dataset.number;
 		choice.innerText = currentQuestion["choice" + number]
 	});
 	availableQuestions.splice(questionsIndex, 1);

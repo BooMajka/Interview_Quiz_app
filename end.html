@@ -10,11 +10,12 @@
 </head>
 
 <body>
-	<main>
-		<section>
+	<section>
+		<div class="container">
 			<div id="end">
 				<h1>All done!</h1>
-				<p id="finalScore">Your Final score is 22.</p>
+				<p>Your Final score is: </p>
+				<p id="finalScore"></p>
 				<div class="form">
 					<input type="text" name="name" id="username" class="text-input" placeholder="Enter Task Name" />
 					<button class="btn" type="submit" id="saveScoreBtn" onclick="saveHighScore(event)"
@@ -22,9 +23,10 @@
 				</div>
 				<a href="./game.html" class="btn">Play Again</a>
 				<a href="/" class="btn">Home</a>
+				<a href="./highscores.html" class="btn">View high scores</a>
 			</div>
-		</section>
-	</main>
+		</div>
+	</section>
 
 	<script src="./assets/js/end.js"></script>
 </body>

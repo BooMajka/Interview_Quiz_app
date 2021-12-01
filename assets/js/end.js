@@ -7,19 +7,11 @@ const mostRecentScore = localStorage.getItem("mostRecentScore");
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 const max_high_scores = 5;
 
-const highScoresList = document.querySelector("#highScoresList");
-const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-
-highScoresList.innerHTML = 
-highScores.map(score => {
-	return `<li class="high-score"> ${score.name} - ${score.score}</li>`
-}).join('');
-
 
 finalScore.innerText = mostRecentScore;
 username.addEventListener("keyup", () => {
 	saveScoreBtn.disabled = !username.value
-})
+});
 
 function saveHighScore(e) {
 	e.preventDefault();
